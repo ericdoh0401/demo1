@@ -6,15 +6,20 @@
 ////
 ////
 //
+
+// figure out how to take a screenshot of a device with
+// a different iOS. "OS Version no runtime."
+
+// crop the image for iPhone
+
+
+// currently, we know that the NavigationBlock is handled differently on an iPad.
+
 import SwiftUI
 import UIKit
-//import HOL
-
-// .init(name: "Drunk Man's Pangea", imageName: "", color: .purple)
 
 struct ContentView: View {
     @AppStorage("yourName") var yourName = ""
-//    @StateObject var connectionManager: MPConnectionManager
     @EnvironmentObject var game: GameService
     @State private var offset: CGFloat = 0
     @State private var offset1: CGFloat = 0
@@ -25,71 +30,72 @@ struct ContentView: View {
     
     init(yourName: String){
         self.yourName = yourName
-//        _connectionManager = StateObject(wrappedValue: MPConnectionManager(yourName: yourName))
     }
 
     var body: some View {
         NavigationView {
-            ZStack {
-                Color(.black)
-                    .ignoresSafeArea()
-                
-                if threshold {
-                    Sample(yourName: self.yourName)
-                        .opacity(showGradient ? 1.0 : 0.0) // Fade in ContentView()
-                } 
-                else {
-                    LinearGradient(gradient: Gradient(colors: [.purple.adjustBrightness(by: 0.5), .black]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            GeometryReader { geometry in
+                ZStack {
+                    Color(.black)
                         .ignoresSafeArea()
-                        .overlay(
-                            VStack {
-                                Spacer().frame(height: 300)
-                                Image(systemName:"gamecontroller.fill")
-                                    .resizable()
-                                    .frame(width: 70, height: 50)
-                                Spacer().frame(height: 20)
-                                Text("Welcome!")
-                                Spacer().frame(height: 300)
-                                Image(systemName: "dot.circle.and.hand.point.up.left.fill")
-                                    .resizable()
-                                    .frame(width: 60, height: 50)
-                                    .padding(.leading, 20.0)
-                                    .opacity(flickerToggle ? 0.5 : 1)
-                                    .onAppear {
-                                        startFlickering()
-                                    }
-                                Text("Click & Drag")
-                            }
-                        )
-                        .foregroundColor(.white)
-                        .offset(blockPosition)
-                        .gesture(
-                            DragGesture()
-                                .onChanged { value in
-                                    let translation = value.translation
-                                    if translation.height < -500 {
-                                        withAnimation(.spring()) {
-                                            blockPosition.height = -500
-                                            threshold = true
+                    
+                    if threshold {
+                        Sample(yourName: self.yourName)
+                            .opacity(showGradient ? 1.0 : 0.0)
+                    }
+                    else {
+                        LinearGradient(gradient: Gradient(colors: [.purple.adjustBrightness(by: 0.5), .black]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                            .ignoresSafeArea()
+                            .overlay(
+                                VStack {
+                                    Spacer().frame(height: geometry.size.height * 0.4)
+                                    Image(systemName:"gamecontroller.fill")
+                                        .resizable()
+                                        .frame(width: 70, height: 50)
+                                    Spacer().frame(height: geometry.size.height * 0.02)
+                                    Text("Welcome!")
+                                    Spacer().frame(height: geometry.size.height * 0.4)
+                                    Image(systemName: "dot.circle.and.hand.point.up.left.fill")
+                                        .resizable()
+                                        .frame(width: 60, height: 50)
+                                        .padding(.leading, 20.0)
+                                        .opacity(flickerToggle ? 0.5 : 1)
+                                        .onAppear {
+                                            startFlickering()
                                         }
-                                    } else {
-                                        blockPosition.height = translation.height
-                                    }
+                                    Text("Click & Drag")
                                 }
-                                .onEnded { value in
-                                    withAnimation(.spring()) {
-                                        if !threshold {
-                                            blockPosition = .zero
+                            )
+                            .foregroundColor(.white)
+                            .offset(blockPosition)
+                            .gesture(
+                                DragGesture()
+                                    .onChanged { value in
+                                        let translation = value.translation
+                                        if translation.height < -500 {
+                                            withAnimation(.spring()) {
+                                                blockPosition.height = -500
+                                                threshold = true
+                                            }
+                                        } else {
+                                            blockPosition.height = translation.height
                                         }
-                                        else {
-                                            withAnimation(.linear(duration: 1.2)) {
-                                                showGradient = true
+                                    }
+                                    .onEnded { value in
+                                        withAnimation(.spring()) {
+                                            if !threshold {
+                                                blockPosition = .zero
+                                            }
+                                            else {
+                                                withAnimation(.linear(duration: 1.2)) {
+                                                    showGradient = true
+                                                }
                                             }
                                         }
                                     }
-                                }
-                        )
-                        .offset(y: offset)
+                            )
+                            .offset(y: offset)
+                    }
                 }
             }
         }

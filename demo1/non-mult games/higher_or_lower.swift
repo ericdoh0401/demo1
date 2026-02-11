@@ -284,3 +284,9 @@ struct HOL: View {
         }
     }
 }
+
+struct HOLView_Previews: PreviewProvider{
+    static var previews: some View{
+        HOL()
+    }
+}

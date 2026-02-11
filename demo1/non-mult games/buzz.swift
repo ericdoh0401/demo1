@@ -111,3 +111,11 @@ struct buzzed: View {
         print(cards)
     }
 }
+
+
+struct Buzz_Previews: PreviewProvider {
+    static var previews: some View{
+//    var some body{
+        buzzed()
+    }
+}

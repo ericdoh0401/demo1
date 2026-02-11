@@ -10,7 +10,6 @@ import SwiftUI
 struct CardView : View {
     @State var card: Game
     @AppStorage("yourName") var yourName = ""
-//    @EnvironmentObject var connectionManager: MPConnectionManager
     @EnvironmentObject var game: GameService
     @State private var hol: Bool = false
     @State private var king: Bool = false
@@ -21,6 +20,7 @@ struct CardView : View {
     @State private var titan: Bool = false
     @State private var coin: Bool = false
     @State private var liar: Bool = false
+    @State private var deck: Bool = false
     @State private var hol_int: Bool = false
     @State private var king_int: Bool = false
     @State private var dice_int: Bool = false
@@ -30,13 +30,12 @@ struct CardView : View {
     @State private var titan_int: Bool = false
     @State private var coin_int: Bool = false
     @State private var liar_int: Bool = false
+    @State private var deck_int: Bool = false
     
     init(card: Game, yourName: String){
         _card = State(initialValue: card)
         self.yourName = yourName
     }
-//    @State var color: Color
-//    @State var cur: Bool
     let cardGradient = Gradient(colors: [Color.black.opacity(0.0), Color.black.opacity(0.5)])
     
     var body: some View{
@@ -72,7 +71,7 @@ struct CardView : View {
                     .aspectRatio(contentMode: .fit)
                     .opacity(Double(card.x/30 * -1 - 1))
                 
-                Image(systemName: "play.circle")
+                Image(systemName: "gamecontroller")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .opacity(Double(card.x/30 - 1))
@@ -88,7 +87,6 @@ struct CardView : View {
                 .onChanged { value in
                     withAnimation(.default) {
                         card.x = value.translation.width
-                        // MARK: - BUG 5
                         card.y = value.translation.height
                         card.degree = 7 * (value.translation.width > 0 ? 1 : -1)
                     }
@@ -110,6 +108,7 @@ struct CardView : View {
                                 titan = (card.name == "Titanic")
                                 coin = (card.name == "Coin Flip")
                                 liar = (card.name == "Liar's Poker")
+                                deck = (card.name == "Deck of Cards")
                             }
 //                            isNavigating = true
                         case (-100)...(-1):
@@ -126,6 +125,7 @@ struct CardView : View {
                                 titan_int = (card.name == "Titanic")
                                 coin_int = (card.name == "Coin Flip")
                                 liar_int = (card.name == "Liar's Poker")
+                                deck_int = (card.name == "Deck of Cards")
                             }
                         default:
                             card.x = 0; card.y = 0
@@ -287,8 +287,26 @@ struct CardView : View {
             card.x = 0; card.y = 0; card.degree = 0
         }
         NavigationLink(
-            destination: coin_instruction(), // Replace with the actual view you want to navigate to
+            destination: Liar_instruction(), // Replace with the actual view you want to navigate to
             isActive: $liar_int
+        ) {
+            EmptyView()
+        }
+        .onAppear(){
+            card.x = 0; card.y = 0; card.degree = 0
+        }
+        NavigationLink(
+            destination: Deck_Start_View(yourName: self.yourName), // Replace with the actual view you want to navigate to
+            isActive: $deck
+        ) {
+            EmptyView()
+        }
+        .onAppear(){
+            card.x = 0; card.y = 0; card.degree = 0
+        }
+        NavigationLink(
+            destination: coin_instruction(), // Replace with the actual view you want to navigate to
+            isActive: $deck_int
         ) {
             EmptyView()
         }
@@ -318,7 +336,6 @@ struct Sample: View {
     @State private var isNavigatingRight = false
     @State private var isNavigatingLeft = false
     @State private var multiSetting = false
-//    @EnvironmentObject var connectionManager: MPConnectionManager
     @EnvironmentObject var game: GameService
     @AppStorage("yourName") var yourName = ""
     
@@ -337,11 +354,13 @@ struct Sample: View {
      .init(name: "Coin Flip", imageName: "bitcoinsign.circle", color: .blue, index: 7, dimX: 130, dimY: 130)]
     
     var mult_games: [Game] =
-    [.init(name: "Liar's Poker", imageName: "arrow.up.arrow.down.square", color: Color(UIColor(red: 217/255, green: 33/255, blue: 33/255, alpha: 1)), index: 0, dimX: 130, dimY: 130)]
+    [.init(name: "Deck of Cards", imageName: "greetingcard", color: Color(UIColor(red: 217/255, green: 33/255, blue: 33/255, alpha: 1)), index: 0, dimX: 100, dimY: 130),
+     .init(name: "Liar's Poker", imageName: "doc.questionmark", color: Color(UIColor(red: 255/255, green: 100/255, blue: 50/255, alpha: 1)), index: 1, dimX: 100, dimY: 130)]
 
     var body: some View {
             
         NavigationView{
+            
             if !multiSetting {
                 ZStack{
                     
@@ -414,7 +433,6 @@ struct Sample: View {
                         .foregroundColor(.black)
                         
                     }
-//                    .navigationTitle("Game Header")
                     .navigationBarHidden(true)
                 }
             }
@@ -498,16 +516,26 @@ struct Sample: View {
 
     func scroll(offset: Int) {
         if !multiSetting {
-            let newIndex = currentIndex + offset
-            if newIndex >= 0 && newIndex < non_mult_games.count {
+            let newIndex = (currentIndex + offset) % non_mult_games.count
+            if newIndex < 0 {
+                withAnimation {
+                    currentIndex = non_mult_games.count - 1
+                }
+            }
+            else if newIndex >= 0 && newIndex < non_mult_games.count {
                 withAnimation {
                     currentIndex = newIndex
                 }
             }
         }
         else {
-            let newIndex = currentIndex1 + offset
-            if newIndex >= 0 && newIndex < mult_games.count {
+            let newIndex = (currentIndex1 + offset) % mult_games.count
+            if newIndex < 0 {
+                withAnimation {
+                    currentIndex1 = mult_games.count - 1
+                }
+            }
+            else if newIndex >= 0 && newIndex < mult_games.count {
                 withAnimation {
                     currentIndex1 = newIndex
                 }

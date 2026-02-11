@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		768310ED2B97558900411A03 /* SetUpUserID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768310EC2B97558900411A03 /* SetUpUserID.swift */; };
+		768310F02B97570E00411A03 /* ViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768310EF2B97570E00411A03 /* ViewModifier.swift */; };
+		768310F32B97583B00411A03 /* MPConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768310F22B97583B00411A03 /* MPConnectionManager.swift */; };
+		768310F72B9758D500411A03 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768310F62B9758D500411A03 /* GameService.swift */; };
+		768310FA2B97596D00411A03 /* GameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768310F92B97596D00411A03 /* GameModels.swift */; };
+		768310FC2B9759A000411A03 /* MPGameMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768310FB2B9759A000411A03 /* MPGameMove.swift */; };
+		768311002B98321800411A03 /* bs_contentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768310FF2B98321800411A03 /* bs_contentView.swift */; };
+		768311022B98323600411A03 /* MPJoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768311012B98323600411A03 /* MPJoinView.swift */; };
+		768311042B98325700411A03 /* MPHostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768311032B98325700411A03 /* MPHostsView.swift */; };
+		768311062B98329200411A03 /* LiarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768311052B98329200411A03 /* LiarView.swift */; };
+		768311082B98364600411A03 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 768311072B98364600411A03 /* Launch Screen.storyboard */; };
+		768311132BA07F2A00411A03 /* interDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768311122BA07F2A00411A03 /* interDeck.swift */; };
+		768311152BA07FFF00411A03 /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768311142BA07FFF00411A03 /* DeckView.swift */; };
 		768487062B688B06007F0C1E /* demo1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768487052B688B06007F0C1E /* demo1App.swift */; };
 		768487082B688B06007F0C1E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768487072B688B06007F0C1E /* ContentView.swift */; };
 		7684870A2B688B08007F0C1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 768487092B688B08007F0C1E /* Assets.xcassets */; };
@@ -14,6 +27,17 @@
 		768487172B688B09007F0C1E /* demo1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768487162B688B09007F0C1E /* demo1Tests.swift */; };
 		768487212B688B09007F0C1E /* demo1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768487202B688B09007F0C1E /* demo1UITests.swift */; };
 		768487232B688B09007F0C1E /* demo1UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768487222B688B09007F0C1E /* demo1UITestsLaunchTests.swift */; };
+		768487362B724009007F0C1E /* super.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768487352B724009007F0C1E /* super.swift */; };
+		768487382B72403B007F0C1E /* buzz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768487372B72403B007F0C1E /* buzz.swift */; };
+		7684873A2B724067007F0C1E /* dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768487392B724067007F0C1E /* dice.swift */; };
+		7684873C2B72407F007F0C1E /* kings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7684873B2B72407F007F0C1E /* kings.swift */; };
+		7684873E2B724099007F0C1E /* higher_or_lower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7684873D2B724099007F0C1E /* higher_or_lower.swift */; };
+		768487402B7240B4007F0C1E /* cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7684873F2B7240B4007F0C1E /* cards.swift */; };
+		768487422B724594007F0C1E /* pangea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768487412B724594007F0C1E /* pangea.swift */; };
+		768487472B72FC03007F0C1E /* pangea1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768487462B72FC03007F0C1E /* pangea1.swift */; };
+		7684874B2B7A219F007F0C1E /* Titanic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7684874A2B7A219F007F0C1E /* Titanic.swift */; };
+		7684874D2B7E0D6C007F0C1E /* coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7684874C2B7E0D6C007F0C1E /* coin.swift */; };
+		7684874F2B871493007F0C1E /* sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7684874E2B871493007F0C1E /* sample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +58,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		768487022B688B06007F0C1E /* demo1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		768310EC2B97558900411A03 /* SetUpUserID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpUserID.swift; sourceTree = "<group>"; };
+		768310EF2B97570E00411A03 /* ViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifier.swift; sourceTree = "<group>"; };
+		768310F22B97583B00411A03 /* MPConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPConnectionManager.swift; sourceTree = "<group>"; };
+		768310F62B9758D500411A03 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
+		768310F92B97596D00411A03 /* GameModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModels.swift; sourceTree = "<group>"; };
+		768310FB2B9759A000411A03 /* MPGameMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPGameMove.swift; sourceTree = "<group>"; };
+		768310FF2B98321800411A03 /* bs_contentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bs_contentView.swift; sourceTree = "<group>"; };
+		768311012B98323600411A03 /* MPJoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPJoinView.swift; sourceTree = "<group>"; };
+		768311032B98325700411A03 /* MPHostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPHostsView.swift; sourceTree = "<group>"; };
+		768311052B98329200411A03 /* LiarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiarView.swift; sourceTree = "<group>"; };
+		768311072B98364600411A03 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		768311122BA07F2A00411A03 /* interDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = interDeck.swift; sourceTree = "<group>"; };
+		768311142BA07FFF00411A03 /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
+		768487022B688B06007F0C1E /* Oh Games.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oh Games.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		768487052B688B06007F0C1E /* demo1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demo1App.swift; sourceTree = "<group>"; };
 		768487072B688B06007F0C1E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		768487092B688B08007F0C1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,6 +81,18 @@
 		7684871C2B688B09007F0C1E /* demo1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = demo1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		768487202B688B09007F0C1E /* demo1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demo1UITests.swift; sourceTree = "<group>"; };
 		768487222B688B09007F0C1E /* demo1UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demo1UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		768487352B724009007F0C1E /* super.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = super.swift; sourceTree = "<group>"; };
+		768487372B72403B007F0C1E /* buzz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buzz.swift; sourceTree = "<group>"; };
+		768487392B724067007F0C1E /* dice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dice.swift; sourceTree = "<group>"; };
+		7684873B2B72407F007F0C1E /* kings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kings.swift; sourceTree = "<group>"; };
+		7684873D2B724099007F0C1E /* higher_or_lower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = higher_or_lower.swift; sourceTree = "<group>"; };
+		7684873F2B7240B4007F0C1E /* cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cards.swift; sourceTree = "<group>"; };
+		768487412B724594007F0C1E /* pangea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pangea.swift; sourceTree = "<group>"; };
+		768487462B72FC03007F0C1E /* pangea1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pangea1.swift; sourceTree = "<group>"; };
+		7684874A2B7A219F007F0C1E /* Titanic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Titanic.swift; sourceTree = "<group>"; };
+		7684874C2B7E0D6C007F0C1E /* coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coin.swift; sourceTree = "<group>"; };
+		7684874E2B871493007F0C1E /* sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sample.swift; sourceTree = "<group>"; };
+		76FCAAAA2B89645B00DF53CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +120,101 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		768310E52B9753EA00411A03 /* non-mult games */ = {
+			isa = PBXGroup;
+			children = (
+				768487372B72403B007F0C1E /* buzz.swift */,
+				768487352B724009007F0C1E /* super.swift */,
+				768487412B724594007F0C1E /* pangea.swift */,
+				768487462B72FC03007F0C1E /* pangea1.swift */,
+				7684873B2B72407F007F0C1E /* kings.swift */,
+				7684874C2B7E0D6C007F0C1E /* coin.swift */,
+				7684874A2B7A219F007F0C1E /* Titanic.swift */,
+				768487392B724067007F0C1E /* dice.swift */,
+				7684873D2B724099007F0C1E /* higher_or_lower.swift */,
+			);
+			path = "non-mult games";
+			sourceTree = "<group>";
+		};
+		768310E62B97543B00411A03 /* mult games */ = {
+			isa = PBXGroup;
+			children = (
+				768310EE2B9756FB00411A03 /* Utilities */,
+				768310F12B9757E100411A03 /* MultiPeerConnectivity */,
+				768310F52B9758A700411A03 /* Game Stuff */,
+				768310F82B97592E00411A03 /* Game Models */,
+				768310E72B97544800411A03 /* Liar's Poker */,
+				7683110D2B9F3CA600411A03 /* Interactive Card Deck */,
+			);
+			path = "mult games";
+			sourceTree = "<group>";
+		};
+		768310E72B97544800411A03 /* Liar's Poker */ = {
+			isa = PBXGroup;
+			children = (
+				768310FF2B98321800411A03 /* bs_contentView.swift */,
+				768311052B98329200411A03 /* LiarView.swift */,
+			);
+			path = "Liar's Poker";
+			sourceTree = "<group>";
+		};
+		768310EE2B9756FB00411A03 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				768310EF2B97570E00411A03 /* ViewModifier.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		768310F12B9757E100411A03 /* MultiPeerConnectivity */ = {
+			isa = PBXGroup;
+			children = (
+				768310EC2B97558900411A03 /* SetUpUserID.swift */,
+				768310F22B97583B00411A03 /* MPConnectionManager.swift */,
+				768310FB2B9759A000411A03 /* MPGameMove.swift */,
+				768311012B98323600411A03 /* MPJoinView.swift */,
+				768311032B98325700411A03 /* MPHostsView.swift */,
+			);
+			path = MultiPeerConnectivity;
+			sourceTree = "<group>";
+		};
+		768310F52B9758A700411A03 /* Game Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				768310F62B9758D500411A03 /* GameService.swift */,
+			);
+			path = "Game Stuff";
+			sourceTree = "<group>";
+		};
+		768310F82B97592E00411A03 /* Game Models */ = {
+			isa = PBXGroup;
+			children = (
+				768310F92B97596D00411A03 /* GameModels.swift */,
+				768311072B98364600411A03 /* Launch Screen.storyboard */,
+			);
+			path = "Game Models";
+			sourceTree = "<group>";
+		};
+		7683110D2B9F3CA600411A03 /* Interactive Card Deck */ = {
+			isa = PBXGroup;
+			children = (
+				768311122BA07F2A00411A03 /* interDeck.swift */,
+				768311142BA07FFF00411A03 /* DeckView.swift */,
+			);
+			path = "Interactive Card Deck";
+			sourceTree = "<group>";
+		};
+		7683110F2B9F3CF300411A03 /* HomeScreen and Cards */ = {
+			isa = PBXGroup;
+			children = (
+				768487072B688B06007F0C1E /* ContentView.swift */,
+				768487052B688B06007F0C1E /* demo1App.swift */,
+				7684874E2B871493007F0C1E /* sample.swift */,
+				7684873F2B7240B4007F0C1E /* cards.swift */,
+			);
+			path = "HomeScreen and Cards";
+			sourceTree = "<group>";
+		};
 		768486F92B688B06007F0C1E = {
 			isa = PBXGroup;
 			children = (
@@ -84,7 +228,7 @@
 		768487032B688B06007F0C1E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				768487022B688B06007F0C1E /* demo1.app */,
+				768487022B688B06007F0C1E /* Oh Games.app */,
 				768487122B688B09007F0C1E /* demo1Tests.xctest */,
 				7684871C2B688B09007F0C1E /* demo1UITests.xctest */,
 			);
@@ -94,8 +238,10 @@
 		768487042B688B06007F0C1E /* demo1 */ = {
 			isa = PBXGroup;
 			children = (
-				768487052B688B06007F0C1E /* demo1App.swift */,
-				768487072B688B06007F0C1E /* ContentView.swift */,
+				7683110F2B9F3CF300411A03 /* HomeScreen and Cards */,
+				768310E62B97543B00411A03 /* mult games */,
+				768310E52B9753EA00411A03 /* non-mult games */,
+				76FCAAAA2B89645B00DF53CC /* Info.plist */,
 				768487092B688B08007F0C1E /* Assets.xcassets */,
 				7684870B2B688B08007F0C1E /* Preview Content */,
 			);
@@ -144,7 +290,7 @@
 			);
 			name = demo1;
 			productName = demo1;
-			productReference = 768487022B688B06007F0C1E /* demo1.app */;
+			productReference = 768487022B688B06007F0C1E /* Oh Games.app */;
 			productType = "com.apple.product-type.application";
 		};
 		768487112B688B09007F0C1E /* demo1Tests */ = {
@@ -231,6 +377,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				768311082B98364600411A03 /* Launch Screen.storyboard in Resources */,
 				7684870D2B688B08007F0C1E /* Preview Assets.xcassets in Resources */,
 				7684870A2B688B08007F0C1E /* Assets.xcassets in Resources */,
 			);
@@ -257,8 +404,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7684873A2B724067007F0C1E /* dice.swift in Sources */,
+				7684873C2B72407F007F0C1E /* kings.swift in Sources */,
+				768310FA2B97596D00411A03 /* GameModels.swift in Sources */,
+				768311042B98325700411A03 /* MPHostsView.swift in Sources */,
+				768487422B724594007F0C1E /* pangea.swift in Sources */,
+				768311152BA07FFF00411A03 /* DeckView.swift in Sources */,
+				768310ED2B97558900411A03 /* SetUpUserID.swift in Sources */,
+				768487402B7240B4007F0C1E /* cards.swift in Sources */,
+				7684874D2B7E0D6C007F0C1E /* coin.swift in Sources */,
+				768487382B72403B007F0C1E /* buzz.swift in Sources */,
+				768487362B724009007F0C1E /* super.swift in Sources */,
+				768311132BA07F2A00411A03 /* interDeck.swift in Sources */,
+				768487472B72FC03007F0C1E /* pangea1.swift in Sources */,
+				768310F72B9758D500411A03 /* GameService.swift in Sources */,
 				768487082B688B06007F0C1E /* ContentView.swift in Sources */,
+				768311002B98321800411A03 /* bs_contentView.swift in Sources */,
+				7684874F2B871493007F0C1E /* sample.swift in Sources */,
 				768487062B688B06007F0C1E /* demo1App.swift in Sources */,
+				768310F32B97583B00411A03 /* MPConnectionManager.swift in Sources */,
+				768310FC2B9759A000411A03 /* MPGameMove.swift in Sources */,
+				7684874B2B7A219F007F0C1E /* Titanic.swift in Sources */,
+				768311062B98329200411A03 /* LiarView.swift in Sources */,
+				768310F02B97570E00411A03 /* ViewModifier.swift in Sources */,
+				7684873E2B724099007F0C1E /* higher_or_lower.swift in Sources */,
+				768311022B98323600411A03 /* MPJoinView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,20 +592,24 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"demo1/Preview Content\"";
+				DEVELOPMENT_TEAM = 87P9PSW2G5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = demo1/Info.plist;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Would like to play multiplayer game";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = eoh.demo1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Oh Games";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -450,20 +624,24 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"demo1/Preview Content\"";
+				DEVELOPMENT_TEAM = 87P9PSW2G5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = demo1/Info.plist;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Would like to play multiplayer game";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = eoh.demo1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Oh Games";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

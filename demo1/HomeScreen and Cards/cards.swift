@@ -12,11 +12,8 @@ struct Card: Identifiable {
     let id = UUID()
     let name: String
     let color: Color
-    /// Card x position
     var x: CGFloat = 0.0
-    /// Card y position
     var y: CGFloat = 0.0
-    /// Card rotation angle
     var degree: Double = 0.0
     
     static var data: [Card] {
@@ -33,13 +30,6 @@ struct Card: Identifiable {
         }
 }
 
-//struct OffsetPreferenceKey: PreferenceKey {
-//    static var defaultValue: CGFloat = 0
-//
-//    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-//        value = nextValue()
-//    }
-//}
 
 struct OffsetPreferenceKey: PreferenceKey {
     static var defaultValue: CGFloat = 0
@@ -81,7 +71,7 @@ extension Color {
     }
 }
 
-// Extension to adjust brightness for UIColor
+
 extension UIColor {
     func adjusted(by factor: CGFloat) -> UIColor? {
         var hue: CGFloat = 0
@@ -271,5 +261,18 @@ public struct bz{
                  "You: Pick another player to marry. Every time one of you drinks, the other one must as well until it is your turn again."]
         
         cards.shuffle()
+    }
+}
+
+
+struct PlayerButtonStyle: ButtonStyle{
+    let isCurrent: Bool
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding(8)
+            .background(RoundedRectangle(cornerRadius: 10)
+                .fill(isCurrent ? Color.green : Color.gray)
+            )
+            .foregroundColor(.white)
     }
 }

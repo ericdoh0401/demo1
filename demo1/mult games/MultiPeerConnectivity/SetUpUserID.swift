@@ -12,21 +12,30 @@ struct SetUpUserID: View {
     @State private var userName = ""
     var body: some View {
         VStack{
-            Text("Type in a unique ID name.")
+            Text("Type in a unique gameID.")
             TextField("Your gameID", text: $userName)
                 .textFieldStyle(.roundedBorder)
+            
+            Spacer()
+                .frame(height: 20)
+            
+            Image("logo")
+                .resizable()
+                .frame(width: 200, height: 200)
+            
+            Spacer()
+                .frame(height: 30)
+            
             Button("Set"){
                 yourName = userName
             }
             .buttonStyle(.borderedProminent)
+            .foregroundColor(.black)
             .disabled(userName.isEmpty)
-            Image("smile")
-                .resizable()
-                .frame(width: 160, height: 160)
             Spacer()
         }
         .padding()
-        .navigationTitle("Game Header")
+        .navigationTitle("Welcome!")
         .inNavigationStack()
     }
 }
